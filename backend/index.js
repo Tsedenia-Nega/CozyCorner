@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import helmet from 'helmet';
 import authRoutes from './src/routes/authRoutes.js';
+import productRoutes from './src/routes/productRoutes.js';
 import prisma from './src/config/db.js';
 dotenv.config();
 const app = express();
@@ -20,6 +21,7 @@ await prisma.$queryRaw`SELECT 1`;
    }
 })
 app.use("/api/auth", authRoutes);
+app.use("/api/products",productRoutes);
 app.listen(process.env.PORT,()=>{
     console.log(`Cozy corner backend is running on port ${process.env.PORT}`);
 })  
