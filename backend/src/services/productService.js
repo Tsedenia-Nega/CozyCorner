@@ -8,8 +8,11 @@ class ProductService {
   async getAllproducts() {
     return await productRepository.getAll();
   }
+  async getProductById(id) {
+    return await productRepository.getById(id);
+  }
   async updateProduct(id, updateData) {
-    const existing = await productRepository.findById(id);
+    const existing = await productRepository.getById(id);
     if (!existing) throw new Error("Product not found");
     return await productRepository.update(id, updateData);
   }

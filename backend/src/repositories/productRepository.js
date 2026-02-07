@@ -10,9 +10,18 @@ class ProductRepository {
     });
   }
   async update(id, data) {
+    // 1. Destructure to remove 'id' and 'createdAt' from the body
+    // Prisma throws an error if you include the Primary Key in the 'data' section
+    const { id: _, createdAt, ...updateData } = data;
+
     return await prisma.product.update({
       where: { id: Number(id) },
-      data: data, // Prisma only updates the fields present in this object
+      data: {
+        ...updateData,
+        // 2. Force conversion to numbers in case they come as strings from the form
+        price: updateData.price ? parseFloat(updateData.price) : undefined,
+        stock: updateData.stock ? parseInt(updateData.stock) : undefined,
+      },
     });
   }
   async getById(id) {
