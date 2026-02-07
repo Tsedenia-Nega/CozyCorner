@@ -23,7 +23,7 @@ async login (email,password){
     if(!isMatch){
         throw new Error('Invalid email or password');
     }
-    const token = jwt.sign({id:user._id},process.env.JWT_SECRET,{expiresIn:'1d'});
+    const token = jwt.sign({id:user.id},process.env.JWT_SECRET,{expiresIn:'1d'});
     return {token,user};
 }
     }

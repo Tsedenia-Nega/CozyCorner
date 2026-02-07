@@ -19,7 +19,9 @@ class ProductRepository {
     return await prisma.product.findUnique({ where: { id: Number(id) } });
   }
   async delete(id) {
-    return await prisma.product.delete({ where: { id } });
+    return await prisma.product.delete({
+      where: { id: Number(id) }, // Add Number() here
+    });
   }
 }
 export default new ProductRepository();
