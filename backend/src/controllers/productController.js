@@ -35,9 +35,22 @@ export const deleteProduct = async (req, res) => {
   }
 };
 export const getProductById = async (req, res) => {
-  const { id } = req.params;            
-    try {   await productService.getProductById(id);          
+  const { id } = req.params;
+
+  try {
+    // 1. You must assign the result to a variable
+    const product = await productService.getProductById(id);
+
+    // 2. Check if the product exists
+    if (!product) {
+      return res.status(404).json({ message: "Product not found" });
+    }
+
+    // 3. Send the successfully found product
     res.status(200).json(product);
   } catch (error) {
-    res.status(404).json({ error: error.message });
-  } };
+    // 4. Use 500 for server errors, as 404 is specifically for "Not Found"
+    console.error("Controller Error:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
