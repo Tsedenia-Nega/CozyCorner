@@ -133,7 +133,7 @@ function Hero() {
                             className: "pt-8 flex flex-col sm:flex-row items-center justify-center gap-5",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                    href: "/products",
+                                    href: "/category/bedroom",
                                     className: "w-full sm:w-auto bg-white text-stone-900 px-12 py-4 text-[12px] font-bold tracking-[0.2em] uppercase hover:bg-[#A67C52] hover:text-white transition-all duration-500 shadow-2xl",
                                     children: "Shop Now"
                                 }, void 0, false, {
