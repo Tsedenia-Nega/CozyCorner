@@ -12,7 +12,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000",
-      "https://cozy-corners.onrender.com", // Add your Vercel URL here after you deploy
+      "https://cozy-corners.onrender.com", 
     ],
     credentials: true,
   }),
