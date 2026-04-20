@@ -77,7 +77,7 @@ function Hero() {
                     className: "space-y-6 animate-in fade-in slide-in-from-bottom-8 duration-1000",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-white text-[10px] md:text-xs tracking-[0.8em] uppercase font-light",
+                            className: "pt-10 text-white text-[10px] md:text-xs tracking-[0.8em] uppercase font-light",
                             children: [
                                 "Cozy Corners — ",
                                 new Date().getFullYear()
